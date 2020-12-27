@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <title>Brass: Birmingham - Player aid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      h1, h2 {
+        display: none;
+      }
+      section {
+        margin-block-start: 2em;
+      }
+      section:first-of-type {
+        margin-block-start: 0;
+      }
+
+      :root {
+        font-size: calc(80% + 1vmin);
+      }
+
+      body {
+        padding: 1em;
+      }
+
+      ol, ul {
+        padding-inline-start: 1.7em;
+      }
+
+      .definitions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+      }
+
+      .consuming {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+      }
+
+      .actions section {
+        margin-block-start: 3em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Brass Birmingham - Player aid</h1>
+    <section class="definitions">
+      <h2>Definitions</h2>
+      <div>
+        <h3>Your Network</h3>
+        <p>A Location is in your Network if you have
+           an Industry tile in it or a Link tile next
+           to it.
+      </div>
+      <div>
+        <h3>Connections</h3>
+        <p>A Location is Connected if a route can be
+           traced via Link tiles of any player.
+      </div>
+    </section>
+    <section class="consuming">
+      <h2>Consuming</h2>
+      <div>
+        <h3>Consume Coal</h3>
+        <p>Remove first available from:
+        <ol>
+          <li>Closest connected Coal Mine</li>
+          <li>Market, if connected to Merchant. Pay cost.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Consume Iron</h3>
+        <p>Remove first available from:
+        <ol>
+          <li>Any Iron Works</li>
+          <li>Market. Pay cost.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Consume Beer</h3>
+        <p>Remove from choice:
+        <ul>
+          <li>Any of your own Brweries</li>
+          <li>Connected opponent's Brewery</li>
+          <li>Connected Merchant beer slot (only using Sell action)</li>
+        </ul>
+        <p>Multiple beer must come
+           from different sources
+      </div>
+    </section>
+    <section class="actions">
+      <h2>Actions</h2>
+      <section>
+        <h3>Build</h3>
+        <ol>
+          <li>
+            Choose and discard appropriate card:
+            <ul>
+              <li>Industry cards: must build within Network; build matching Industry (or any if wild)</li>
+              <li>Location cards: doesn't need to be within Network; build in specified location, or any if wild (except farm brewery).</li>
+            </ul>
+          </li>
+          <li>Pick lowest level Industry tile.</li>
+          <li>Place within Location, using single-icon slots first.</li>
+          <li>Pay cost and consume required resources.</li>
+          <li>Produce resources</li>
+          <li>
+            Check market
+            <ul>
+              <li>Sell newly produced Coal, if connected to merchant.</li>
+              <li>Sell newly produced Iron, regardless of connection.</li>
+            </ul>
+          </li>
+        </ol>
+        <h4>Era restrictions</h4>
+        <ul>
+          <li>Canal era: only 1 tile allowed per player per Location</li>
+          <li>Rail era: multiple tiles allowed per player per Location</li>
+        </ul>
+        <h4>Overbuilding</h3>
+        <p>
+          Over your own tiles:
+          <ul>
+            <li>Any kind is allowed.</li>
+            <li>Any cubes are lost.</li>
+          </ul>
+        <p>
+          Over opponents tiles:
+          <ul>
+            <li>Only for Coal Mine or Iron Works.</li>
+            <li>Must be cubes of placed Industry type available on the board.</li>
+          </ul>
+      </section>
+      <section>
+        <h3>Sell</h3>
+        <ol>
+          <li>Discard any card.</li>
+          <li>Flip 1 tile connected to Merchant with matching icon.</li>
+          <li>Consume required beer indicated on Industry tile.</li>
+          <li>If beer is consumed from Merchant, get the Merchant Beer Bonus.</li>
+          <li>May repeat process from step 2 for other unflipped buildings.</li>
+        </ol>
+      </section>
+      <section>
+        <h3>Loan</h3>
+        <ol>
+          <li>Discard any card.</li>
+          <li>Take £30 from bank</li>
+          <li>Move Income marker 3 levels down, to highest space within level</li>
+        </ol>
+      </section>
+      <section>
+        <h3>Scout</h3>
+        <ol>
+          <li>Discard any 3 cards.</li>
+          <li>Take 1 wild Location card <em>and</em> 1 wild Industry card.</li>
+        </ol>
+        <p>Not allowed if you already have a wild card in your hand.
+      </section>
+      <section>
+        <h3>Develop</h3>
+        <ol>
+          <li>Discard any card.</li>
+          <li>Remove 1 or 2 Player Mat tiles from lowest level of 1 or 2 Industries.</li>
+          <li>Consume 1 Iron for each tile removed.</li>
+        </ol>
+        <p>Not allowed on Industry tiles with lightbulb symbol
+      </section>
+      <section>
+        <h3>Network</h3>
+        <ol>
+          <li>Discard any card.</li>
+          <li>Place Link tile on empty line next to Location in your Network.</li>
+          <li>Pay cost and consume required resoruces, depending on current age</li>
+        </ol>
+        <p>If building 2 rail links, the consumed beer must be from brewery, not merchant.
+      </section>
+    </section>
+  </body>
+</html>
